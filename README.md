@@ -11,7 +11,7 @@ npm install webstream
 ### Piping node.js REPL through websockets ###
 
 ```javascript
-// server.js
+// webrepl.js
 var webstream = require('webstream');
 var repl = require('repl');
 
@@ -23,7 +23,7 @@ webstream.createServer(function(stream) {
 Start the server:
 
 ```bash
-$ node server.js
+$ node samples/webrepl.js
 ```
 
 This will start the node.js REPL and bind it into a websocket. 
@@ -42,7 +42,7 @@ undefined
 Here's how to bind a webstream to a spawned process:
 
 ```javascript
-// server.js
+// webash.js
 var spawn = require('child_process').spawn;
 var http = require('http');
 var webstream = require('webstream');
@@ -74,12 +74,18 @@ webstream.bind(server, function(stream) {
 });
 ```
 
+Start the server:
+
+```bash
+$ node samples/webash.js
+```
+
 Connect via ```wsclient```:
 
 ```bash
 $ bin/wsclient http://localhost:5000
 bash: no job control in this shell
-$ ls -l
+bash-3.2$ ls -l
 ls -l
 total 32
 -rw-r--r--  1 eladb  staff  1058 Dec 21 19:07 LICENSE
@@ -91,7 +97,7 @@ drwxr-xr-x  6 eladb  staff   204 Dec 21 19:12 node_modules
 -rw-r--r--  1 eladb  staff   507 Dec 21 19:28 package.json
 drwxr-xr-x  4 eladb  staff   136 Dec 21 17:24 samples
 drwxr-xr-x  3 eladb  staff   102 Dec 21 19:08 test
-$ exit
+bash-3.2$ exit
 exit
 logout
 Process exited with status 0

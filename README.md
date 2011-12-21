@@ -1,4 +1,4 @@
-# webstream - WebSocket stream API for node.js #
+# webstream - Stream api for node.js websockets #
 
 Simply provides a node.js ```ReadableStream``` and ```WritableStream``` API for websockets.
 

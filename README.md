@@ -4,7 +4,9 @@ Simply provides a ```Stream``` API for websockets.
 
 ## Installation
 
+```bash
 npm install webstream
+```
 
 ## Server
 

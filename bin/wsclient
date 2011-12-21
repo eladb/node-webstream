@@ -1,0 +1,27 @@
+#!/usr/local/bin/node
+var webstream = require('../main');
+
+var argv = require('optimist')
+	.usage("Usage: $0 server-url\n'server-url' is the websocket address of the server (e.g. ws://my.com)")
+	.demand(1)
+	.argv;
+
+var url = argv._[0];
+
+webstream.connect(url, function(err, stream) {
+	if (err) {
+		console.error('Unable to connect to ' + url + '. ' + err.toString());
+		return;
+	}
+
+	// pipe stdin >> webstream
+	process.stdin.resume();
+	process.stdin.pipe(stream);
+
+	// pipe webstream >> stdout
+	stream.pipe(process.stdout);
+
+	// destroy stdin when the stream closes
+	stream.on('close', function() { process.stdin.destroy(); });
+});
+

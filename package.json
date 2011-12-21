@@ -1,0 +1,21 @@
+{
+    "name": "webstream",
+    "description": "WebSocket stream api for node.js",
+    "main": "./main",
+    "author": "Elad Ben-Israel",
+    "version": "0.0.1",
+    "dependencies": {
+        "websocket": ">=1.0.4"
+    },
+    "devDependencies": {
+        "nodeunit": ">=0.6.4"
+    },
+    "repository": {
+        "type": "git",
+        "url": "http://github.com/anodejs/node-restline"
+    },
+    "scripts": {
+        "test": "node_modules/nodeunit/bin/nodeunit test/"
+    },
+    "bin": [ "./bin/wsclient" ]
+}

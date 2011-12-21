@@ -6,7 +6,9 @@ Simply provides a node.js ```Stream``` API for websockets.
 npm install webstream
 ```
 
-## Usage
+## Examples
+
+#### Piping node.js REPL through websockets
 
 ```javascript
 // server.js
@@ -34,6 +36,8 @@ undefined
 > x
 { damn: 'i am in the node.js repl' }
 ```
+
+#### Piping /bin/bash through websockets
 
 Here's how to bind a webstream to a spawned process:
 

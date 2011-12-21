@@ -1,6 +1,6 @@
 {
     "name": "webstream",
-    "description": "WebSocket stream api for node.js",
+    "description": "Stream api for node.js websockets",
     "main": "./main",
     "author": "Elad Ben-Israel",
     "version": "0.0.1",
@@ -12,7 +12,7 @@
     },
     "repository": {
         "type": "git",
-        "url": "http://github.com/anodejs/node-restline"
+        "url": "http://github.com/anodejs/node-webstream"
     },
     "scripts": {
         "test": "node_modules/nodeunit/bin/nodeunit test/"

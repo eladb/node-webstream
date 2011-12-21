@@ -1,6 +1,6 @@
 # webstream - WebSocket stream API for node.js #
 
-Simply provides a node.js ```Stream``` API for websockets.
+Simply provides a node.js ```ReadableStream``` and ```WritableStream``` API for websockets.
 
 ```bash
 npm install webstream
@@ -53,7 +53,7 @@ server.listen(5000);
 webstream.bind(server, function(stream) {
   console.log('Client connected.');
 
-  var proc = spawn('/bin/bash', [ '-i', '-l' ]);
+  var proc = spawn('/bin/bash', [ '-i' ]);
 
   // stdout & stderr
   proc.stdout.on('data', function(data) { stream.write(data); });

@@ -5,6 +5,7 @@
     "author": "Elad Ben-Israel",
     "version": "0.0.1",
     "dependencies": {
+        "optimist": ">=0.3.0",
         "websocket": ">=1.0.4"
     },
     "devDependencies": {

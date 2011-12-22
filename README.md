@@ -55,17 +55,13 @@ webstream.bind(server, function(stream) {
 
   var proc = spawn('/bin/bash', [ '-i' ]);
 
-  // stdout & stderr
-  proc.stdout.on('data', function(data) { stream.write(data); });
-  proc.stderr.on('data', function(data) { stream.write(data); });
+  proc.stdout.pipe(stream);
+  proc.stderr.pipe(stream);
+  stream.pipe(proc.stdin);
   
   proc.on('exit', function(status) {
     stream.write('Process exited with status ' + status + '\n');
     stream.end();
-  });
-
-  stream.on('data', function(data) {
-    proc.stdin.write(data);
   });
 
   stream.on('close', function() {

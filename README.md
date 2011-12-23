@@ -1,5 +1,7 @@
 # webstream - Stream api for node.js websockets #
 
+[![Build Status](https://secure.travis-ci.org/eladb/node-webstream.png)](http://travis-ci.org/eladb/node-webstream)
+
 Simply provides a node.js ```ReadableStream``` and ```WritableStream``` API for websockets.
 
 ```bash
